@@ -10,7 +10,7 @@ function ucfirst(s) {
         return "";
     }
 
-    return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+    return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
 //console.log(ucfirst("hello world"));
@@ -24,7 +24,7 @@ function capitalize(s) {
 
     i = 0;
     for (mot of splitStr) {
-        splitStr[i] = ucfirst(mot);
+        splitStr[i] = ucfirst(mot).toLowerCase();
         i++;
     }
     return splitStr.join(' ');

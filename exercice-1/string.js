@@ -20,7 +20,6 @@ function capitalize(s) {
         return "";
     }
 
-    /*
     var splitStr = s.split(' ');
 
     i = 0;
@@ -29,9 +28,8 @@ function capitalize(s) {
         i++;
     }
     return splitStr.join(' ');
-    */
 
-    return s.split(' ').map(word => ucfirst(word.toLowerCase())).join(' ');
+    //return s.split(' ').map(word => ucfirst(word.toLowerCase())).join(' ');
 }
 
 //console.log(capitalize("ipsum DOLOR"));

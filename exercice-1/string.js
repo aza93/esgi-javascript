@@ -35,17 +35,20 @@ function capitalize(s) {
 //console.log(capitalize("ipsum DOLOR"));
 
 function camelCase(s) {
-    return capitalize(s).split(' ').join('');
+    //return capitalize(s).split(' ').join('');
+
+    return capitalize(s).replace(/_\s/g, '');
 }
 
-//console.log(camelCase("hello world"));
+console.log(camelCase("ToggleCase is_the coolest"));
 
 function snake_case(s) {
     if (!check(s)) {
         return "";
     }
 
-    return s.split(' ').join('_');
+    //return s.split(' ').join('_');
+    return s.toLowerCase().replace(/\w]+/g, '-');
 }
 
 //console.log(snake_case("hello world Bonjour Monde Ciao mondo"));

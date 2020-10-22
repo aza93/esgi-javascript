@@ -1,23 +1,3 @@
-/*
-function type_check_v1(v, t) {
-    if (typeof v === t)
-        return true;
-    else if (typeof v === "object") {
-        switch (t) {
-            case "null":
-                return v === null;
-            case "array":
-                return Array.isArray(v);
-            default:
-                return v !== null && !Array.isArray(v);
-        }
-    }
-
-
-    return false;
-}
-*/
-
 function type_check_v1(variable, type) {
   switch (typeof variable) {
     case "symbol":
@@ -39,12 +19,11 @@ function type_check_v1(variable, type) {
   }
 }
 
-
 //console.log(type_check_v1("sdfsdfdsfsdfd fdf", "number"));
 
 function type_check_v2(v, obj) {
   // if enum
-  if ("enum" in obj && obj["enum"].includes(v)) {
+  if ("enum" in obj && obj["enum"].includes(v) && type_check_v1(v, "number")) {
     return true;
   }
   else if ("type" in obj && !("value" in obj)) {

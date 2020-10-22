@@ -1,3 +1,4 @@
+/*
 function type_check_v1(v, t) {
     if (typeof v === t)
         return true;
@@ -15,13 +16,29 @@ function type_check_v1(v, t) {
 
     return false;
 }
+*/
 
-function type_check_v1(v, t) {
-    if (typeof v === t)
-        return true;
-
-    return false;
+function type_check_v1(variable, type) {
+  switch (typeof variable) {
+    case "symbol":
+    case "number":
+    case "string":
+    case "boolean":
+    case "undefined":
+    case "function":
+      return type === typeof variable;
+    case "object":
+      switch (type) {
+        case "null":
+          return variable === null;
+        case "array":
+          return Array.isArray(variable);
+        default:
+          return variable !== null && !Array.isArray(variable);
+      }
+  }
 }
+
 
 //console.log(type_check_v1("sdfsdfdsfsdfd fdf", "number"));
 
